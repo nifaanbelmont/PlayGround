@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07101a" />
+  <title>Riftfall: Last Light</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="Riftfall: Last Light game arena"></canvas>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Riftfall home"><span class="brand-mark">✦</span><span>RIFT<span class="brand-dim">FALL</span></span></a>
+      <div class="mission"><span class="eyebrow">SECTOR 07 · LAST LIGHT</span><strong>THE BROKEN CITADEL</strong></div>
+      <button id="sound-btn" class="icon-btn" aria-label="Toggle sound" title="Toggle sound">♫</button>
+    </header>
+    <section class="hud" id="hud" aria-live="polite">
+      <div class="hud-left">
+        <div class="stat-card"><span class="eyebrow">VITALS</span><div class="health-line"><span class="heart">♥</span><div class="meter"><i id="health-fill"></i></div><b id="health-text">100</b></div></div>
+        <div class="stat-card charge-card"><span class="eyebrow">RIFT CHARGE <span id="charge-text">0%</span></span><div class="meter charge-meter"><i id="charge-fill"></i></div><small id="charge-hint">COLLECT SHARDS TO CHARGE</small></div>
+      </div>
+      <div class="hud-center"><span class="eyebrow">WAVE</span><strong id="wave-number">01 <em>/ 03</em></strong><div class="wave-dots"><i class="active"></i><i></i><i></i></div></div>
+      <div class="hud-right"><span class="eyebrow">CITADEL COLLAPSE</span><strong id="timer">02:00</strong><small>STAY INSIDE THE SAFE ZONE</small></div>
+    </section>
+    <div id="objective" class="objective"><span class="objective-icon">⌖</span><div><b>HOLD THE LINE</b><span id="objective-copy">Defeat the incoming riftborn. Keep moving.</span></div></div>
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <div class="crosshair" id="crosshair"></div>
+    <div class="touch-controls" id="touch-controls" aria-label="Touch controls">
+      <div class="move-pad"><button data-move="up" aria-label="Move up">▲</button><button data-move="left" aria-label="Move left">◀</button><button data-move="down" aria-label="Move down">▼</button><button data-move="right" aria-label="Move right">▶</button></div>
+      <button id="touch-pulse" class="pulse-touch">PULSE<br><small>READY</small></button>
+      <button id="touch-fire" class="fire-touch" aria-label="Fire">✦</button>
+    </div>
+    <section class="screen visible" id="start-screen">
+      <div class="screen-backdrop"></div>
+      <div class="intro-card">
+        <div class="kicker"><span></span> A RIFTFALL SURVIVAL MISSION</div>
+        <div class="title-lockup"><div class="title-symbol">✦</div><h1>LAST<br><span>LIGHT</span></h1></div>
+        <p class="intro-copy">The Citadel is coming apart. Three waves stand between this world and the dark.</p>
+        <div class="mission-tags"><span>✧ RIFTFALL CITADEL</span><span>⌁ 3 WAVE GAUNTLET</span></div>
+        <button id="start-btn" class="primary-btn">ENTER THE BREACH <span>→</span></button>
+        <p class="controls-note"><b>WASD</b> MOVE&nbsp; · &nbsp;<b>MOUSE</b> AIM & FIRE&nbsp; · &nbsp;<b>Q</b> RIFT PULSE</p>
+        <div class="mobile-note">Touch controls appear in the arena</div>
+      </div>
+      <div class="feature-card"><span class="feature-icon">◉</span><div><b>NEW ABILITY</b><strong>RIFT PULSE</strong><small>Invert gravity. Draw foes in, then blast them back.</small></div><span class="feature-key">Q</span></div>
+      <div class="challenge-card"><span class="challenge-icon">⌁</span><div><b>FRESH CHALLENGE</b><strong>COLLAPSING CITADEL</strong><small>The safe zone shrinks as the clock runs out.</small></div></div>
+      <div class="version-mark">FIELD LOG 07 <span>///</span> 2089</div>
+    </section>
+    <section class="screen" id="end-screen">
+      <div class="screen-backdrop"></div>
+      <div class="end-card"><div class="kicker" id="end-kicker"><span></span> MISSION REPORT</div><div class="end-sigil" id="end-sigil">✦</div><h2 id="end-title">CITADEL SECURED</h2><p id="end-copy">The breach is sealed. For now.</p><div class="result-stats"><div><small>RIFTBORN DOWN</small><b id="score">00</b></div><div><small>TIME HELD</small><b id="survival-time">00:00</b></div></div><button id="retry-btn" class="primary-btn">RUN IT BACK <span>↻</span></button><button id="menu-btn" class="text-btn">RETURN TO BRIEFING</button></div>
+    </section>
+    <footer class="bottom-hint"><span>⌖</span> RIFTFALL CITADEL <i></i> LAST LIGHT PROTOCOL</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
